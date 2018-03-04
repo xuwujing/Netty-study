@@ -3,17 +3,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>1.0.0</groupId>
-  <artifactId>Netty-hello</artifactId>
+  <artifactId>Netty-heartbeat</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-
-  <name>Netty-hello</name>
-  <url>http://maven.apache.org</url>
+ 
+  <name>Netty-heartbeat</name>
+  <url>http://maven.apache.org</url> 
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.7</java.version>
-    <netty.version>4.1.17.Final</netty.version>
+    <netty.version>4.1.22.Final</netty.version>
     
   </properties>
 
@@ -24,11 +24,11 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    
-		<dependency>
+   		 <dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
 			<version>${netty.version}</version>
 		</dependency>
+		
   </dependencies>
 </project>
