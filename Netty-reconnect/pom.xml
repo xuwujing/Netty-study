@@ -3,12 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>1.0.0</groupId>
-  <artifactId>Netty-unpack</artifactId>
+  <artifactId>Netty-reconnect</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>Netty-unpack</name>
-
+  <name>Netty-reconnect</name>
   <url>http://maven.apache.org</url>
 
   <properties>
