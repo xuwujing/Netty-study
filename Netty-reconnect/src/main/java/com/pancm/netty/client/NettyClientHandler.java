@@ -31,7 +31,8 @@ public class NettyClientHandler extends  ChannelInboundHandlerAdapter {
 
     /**循环次数 */ 
     private int fcount = 1;  
-
+    
+  
      /**
      * 建立连接时
      */
@@ -47,6 +48,8 @@ public class NettyClientHandler extends  ChannelInboundHandlerAdapter {
     @Override  
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {  
         System.out.println("关闭连接时："+new Date());  
+        NettyClient nettyClient =new NettyClient();
+        nettyClient.doConnect();
     }  
 
     /**
@@ -60,7 +63,7 @@ public class NettyClientHandler extends  ChannelInboundHandlerAdapter {
         if (obj instanceof IdleStateEvent) {   
             IdleStateEvent event = (IdleStateEvent) obj;  
             if (IdleState.WRITER_IDLE.equals(event.state())) {  //如果写通道处于空闲状态,就发送心跳命令
-                if(idle_count <= 3){   //设置发送次数
+                if(idle_count <= 2){   //设置发送次数
                     idle_count++;  
                     ctx.channel().writeAndFlush(HEARTBEAT_SEQUENCE.duplicate());  
                 }else{  
