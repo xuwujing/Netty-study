@@ -8,6 +8,8 @@
 
 - [Netty-httpServer](https://github.com/xuwujing/Netty/tree/master/Netty-httpServer):Netty Http 服务的实现。
 
+- [Netty-reconnect](https://github.com/xuwujing/Netty-study/tree/master/Netty-reconnect): Netty Client 重连机制的实现。
+
 
 ## Netty的相关博客
 
