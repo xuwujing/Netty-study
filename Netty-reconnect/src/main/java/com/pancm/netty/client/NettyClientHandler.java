@@ -1,9 +1,11 @@
 package com.pancm.netty.client;
 
+import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.channel.EventLoop;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import io.netty.util.CharsetUtil;
@@ -48,8 +50,9 @@ public class NettyClientHandler extends  ChannelInboundHandlerAdapter {
     @Override  
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {  
         System.out.println("关闭连接时："+new Date());  
-        NettyClient nettyClient =new NettyClient();
-        nettyClient.doConnect();
+    	final EventLoop eventLoop = ctx.channel().eventLoop();  
+    	NettyClient.nettyClient.doConnect(new Bootstrap(), eventLoop);  
+		super.channelInactive(ctx); 
     }  
 
     /**
@@ -67,7 +70,7 @@ public class NettyClientHandler extends  ChannelInboundHandlerAdapter {
                     idle_count++;  
                     ctx.channel().writeAndFlush(HEARTBEAT_SEQUENCE.duplicate());  
                 }else{  
-                    System.out.println("不再发送心跳请求了！");
+                    System.out.println("不再发送心跳请求了!");
                 }
                 fcount++;
             }  

@@ -8,10 +8,9 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
  * 
-* Title: NettyServer
-* Description: Netty服务端
-* 服务端
-* Version:1.0.0  
+* @Title: NettyServer
+* @Description: Netty服务端
+* @Version:1.0.0  
 * @author pancm
 * @date 2017年10月8日
  */
@@ -25,7 +24,7 @@ public class NettyServer {
          * Netty创建全部都是实现自AbstractBootstrap。
          * 客户端的是Bootstrap，服务端的则是    ServerBootstrap。
          **/
-        public static void main(String[] args) throws InterruptedException {
+        public static void main(String[] args){
             try {
                 b.group(boss,work);
                 b.channel(NioServerSocketChannel.class);
