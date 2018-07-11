@@ -10,6 +10,7 @@
 
 - [Netty-reconnect](https://github.com/xuwujing/Netty-study/tree/master/Netty-reconnect): Netty Client 重连机制的实现。
 
+- [Netty-protobuf](https://github.com/xuwujing/Netty-study/tree/master/Netty-protobuf): Netty 使用protobuf 协议进行数据数据传输。
 
 ## Netty的相关博客
 
